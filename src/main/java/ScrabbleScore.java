@@ -6,9 +6,29 @@ import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
 public class ScrabbleScore {
-  public static void main(String[] args) {}
+  public static void main(String[] args) {
+    String layout = "templates/layout.vtl";
 
-  public static Integer ScrabbleScore(String userWord) {
+    get("/", (request, reponse) -> {
+      HashMap model = new HashMap();
+      model.put("template", "templates/home.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+    get("/output", (request, reponse) -> {
+      HashMap model = new HashMap();
+      model.put("template", "templates/output.vtl");
+      String userWord = request.queryParams("userWord");
+      Integer results = ScrabbleScore.isScrabbleScore(userWord);
+      model.put("results", results);
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+  }
+
+  public static Integer isScrabbleScore(String userWord) {
+    userWord.toLowerCase();
     Integer score = 0;
 
     char[] userWordArray = userWord.toCharArray();
