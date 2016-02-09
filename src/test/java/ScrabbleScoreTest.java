@@ -23,4 +23,11 @@ public class ScrabbleScoreTest {
     Integer score = 7;
     assertEquals(score, scrabbleScore.ScrabbleScore("mop"));
   }
+
+  @Test
+  public void ScrabbleScore_returnsAScrabbleScoreForALettersEqualAnyWord_18() {
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 18;
+    assertEquals(score, scrabbleScore.ScrabbleScore("zoink"));
+  }
 }
