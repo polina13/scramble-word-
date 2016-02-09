@@ -10,10 +10,18 @@ public class ScrabbleScore {
 
   public static Integer ScrabbleScore(String userWord) {
     Integer score = 0;
-    String userPoint = userWord.replaceAll("a", "1");
+    char[] pointOne = {'a','e','i','o','u','l','n','r','s','t'};
+    char[] userWordArray = userWord.toCharArray();
+    for (char userWordLetter : userWordArray) {
 
-    Integer userPointNumber = Integer.parseInt(userPoint);
-    score += userPointNumber;
+      for (char letter : pointOne) {
+        if( letter == 'a') {
+          score += 1;
+        }
+      }
+    }
     return score;
+
+
   }
 }

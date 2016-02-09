@@ -10,9 +10,11 @@ public class ScrabbleScoreTest {
     assertEquals(score, scrabbleScore.ScrabbleScore("a"));
   }
 
-//   @Test
-// public void leetSpeakTranslator_replacesEveryEWithA3_wordChanges() {
-//   LeetSpeak testLeetSpeak = new LeetSpeak();
-//   assertEquals("3l3phant", testLeetSpeak.leetSpeakTranslator("elephant"));
-// }
+  @Test
+  public void ScrabbleScore_returnsAScrabbleScoreForALettersEqualToOne_10() {
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 10;
+    assertEquals(score, scrabbleScore.ScrabbleScore("aeioulnrst"));
+  }
+
 }
