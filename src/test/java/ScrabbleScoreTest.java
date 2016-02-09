@@ -17,4 +17,10 @@ public class ScrabbleScoreTest {
     assertEquals(score, scrabbleScore.ScrabbleScore("aeioulnrst"));
   }
 
+  @Test
+  public void ScrabbleScore_returnsAScrabbleScoreForALettersEqualAWord_7() {
+    ScrabbleScore scrabbleScore = new ScrabbleScore();
+    Integer score = 7;
+    assertEquals(score, scrabbleScore.ScrabbleScore("mop"));
+  }
 }
